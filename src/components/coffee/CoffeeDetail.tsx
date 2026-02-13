@@ -8,7 +8,7 @@ function CoffeeDetail() {
     const {id} = useParams();
     const nav = useNavigate();
     const {isLoading, isError, error, data} = useQuery<{data:CoffeeDetailData}, Error>({
-        queryKey: ['coffee-detail'],
+        queryKey: ['coffee-detail', id],
         queryFn: async () => {
             return await apiClient.get(`/menu/detail_react/${id}`)
         },

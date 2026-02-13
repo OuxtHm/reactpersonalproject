@@ -6,6 +6,7 @@ import Home from "./components/layout/Home"
 import Footer from "./components/layout/Footer";
 import CoffeeList from "./components/coffee/CoffeeList";
 import CoffeeDetail from "./components/coffee/CoffeeDetail";
+import BoardList from "./components/board/BoardList";
 
 function App() {
     return (
@@ -13,8 +14,9 @@ function App() {
             <Header/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/menu/list/" element={<CoffeeList/>}/>
+                <Route path="/menu/list" element={<CoffeeList/>}/>
                 <Route path="/menu/detail/:id" element={<CoffeeDetail/>}/>
+                <Route path="/board/list" element={<BoardList/>}/>
             </Routes>
             <Footer/>
         </Router>
