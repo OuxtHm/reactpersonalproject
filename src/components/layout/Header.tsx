@@ -11,7 +11,7 @@ function Header() {
                             <span className="symbol">
                                 <img src="/images/logo.svg" alt=""/>
                             </span>
-                            <span className="title">유재현</span>
+                            <span className="title">HOME</span>
                         </a>
                     </div>
                     <Link to={"/menu/list"}>
@@ -19,9 +19,6 @@ function Header() {
                     </Link>
                     <Link to={"/board/list"}>
                         <div className="logo">게시판</div>
-                    </Link>
-                    <Link to={"/news/list"}>
-                        <div className="logo">뉴스</div>
                     </Link>
                 </div>
             </header>

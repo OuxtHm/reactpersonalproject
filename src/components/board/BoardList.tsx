@@ -65,7 +65,7 @@ function BoardList() {
                                 <tr>
                                     <td className="text-center" style={{ width: '10%' }}>{board.NO}</td>
                                     <td className="aln-left" style={{ width: '45%' }}>
-                                        <Link to={`/board/detail?no=${board.NO}`}>{board.SUBJECT}</Link>
+                                        <Link to={`/board/detail/${board.NO}`}>{board.SUBJECT}</Link>
                                     </td>
                                     <td className="text-center" style={{ width: '15%' }}>{board.NAME}</td>
                                     <td className="text-center" style={{ width: '20%' }}>{board.DBDAY}</td>

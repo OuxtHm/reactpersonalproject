@@ -19,9 +19,9 @@ oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT
 
 async function getConnection() {
     return await oracledb.getConnection({
-        user: 'hr',
-        password: 'happy',
-        connectionString: "211.238.142.22:1521/xe"
+        user: 'ouxthm',
+        password: '3546',
+        connectionString: "localhost:1521/xe"
     })
 }
 
@@ -77,7 +77,7 @@ app.post("/board/insert_node", async (req, res) => {
         conn = await getConnection();
         const sql = `
             INSERT INTO board_2(no, name, subject, content, pwd)
-            VALUES (BR2_NO_SEQ.nextval, :name, :subject, :content, :pwd)
+            VALUES (SEQ_BD_NO.nextval, :name, :subject, :content, :pwd)
         `
         await conn.execute(sql,
             {name, subject, content, pwd},
@@ -200,28 +200,3 @@ app.delete("/board/delete_node/:no/:pwd", async (req, res) => {
         if (conn) await conn.close();
     }
 })
-
-// 뉴스 검색
-const client_id = 'OtKU74j2Bx_QN_K5YPck';
-const client_secret = 'eyn6LY7L0j';
-app.get('/news/find_node', function (req, res) {
-    const query = req.query.query as string;
-    if(!query)
-        return res.status(400).send({message:'검색어가 없습니다'});
-    const api_url = 'https://openapi.naver.com/v1/search/news.json?display=50&query=' + encodeURI(query); // JSON 결과
-
-    const options = {
-        url: api_url,
-        headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
-    };
-    request.get(options, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
-            console.log(body);
-            res.end(body);
-        } else {
-            res.status(response.statusCode).end();
-            console.log('error = ' + response.statusCode);
-        }
-    });
-});

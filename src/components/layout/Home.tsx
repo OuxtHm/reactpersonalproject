@@ -31,7 +31,7 @@ function Home() {
                                         <img src={`https://composecoffee.com/${coffee.image}`}/>
                                     </Link>
                                 </span>
-                                <Link to="/generic">
+                                <Link to="/menu/detail/${coffee.id}>">
                                     <h2 className="text-center">{coffee.menuname}</h2>
                                     <div className="content">
                                         <p>{coffee.category}</p>
