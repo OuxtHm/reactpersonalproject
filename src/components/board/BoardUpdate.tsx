@@ -5,10 +5,10 @@ import boardClient from "../../board-commons";
 import {AxiosError, AxiosResponse} from "axios";
 
 interface BoardItem {
-    NO: number;
-    NAME: string;
-    SUBJECT: string;
-    CONTENT: string;
+    no: number;
+    name: string;
+    subject: string;
+    content: string;
 }
 // res.json({"msg":"yes"})
 interface BoardResponse {
@@ -42,9 +42,9 @@ function BoardUpdate(){
     useEffect(()=>{
         if(board)
         {
-            setName(board.NAME)
-            setSubject(board.SUBJECT)
-            setContent(board.CONTENT)
+            setName(board.name)
+            setSubject(board.subject)
+            setContent(board.content)
         }
     },[board])
 

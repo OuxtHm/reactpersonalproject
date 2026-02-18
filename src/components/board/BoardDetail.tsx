@@ -4,12 +4,12 @@ import {Fragment} from "react";
 import boardClient from "../../board-commons";
 
 interface BoardDetailProps {
-    NO: number;
-    NAME: string;
-    SUBJECT: string;
-    CONTENT: string;
-    DBDAY: string;
-    HIT: number
+    no: number;
+    name: string;
+    subject: string;
+    content: string;
+    dbday: string;
+    hit: number
 }
 
 function BoardDetail() {
@@ -44,19 +44,19 @@ function BoardDetail() {
                         <tbody>
                         <tr>
                             <td width={"20%"} className={"text-center"}>번호</td>
-                            <td width={"30%"} className={"text-center"}>{board.NO}</td>
+                            <td width={"30%"} className={"text-center"}>{board.no}</td>
                             <td width={"20%"} className={"text-center"}>작성일</td>
-                            <td width={"30%"} className={"text-center"}>{board.DBDAY}</td>
+                            <td width={"30%"} className={"text-center"}>{board.dbday}</td>
                         </tr>
                         <tr>
                             <td width={"20%"} className={"text-center"}>이름</td>
-                            <td width={"30%"} className={"text-center"}>{board.NAME}</td>
+                            <td width={"30%"} className={"text-center"}>{board.name}</td>
                             <td width={"20%"} className={"text-center"}>조회수</td>
-                            <td width={"30%"} className={"text-center"}>{board.HIT}</td>
+                            <td width={"30%"} className={"text-center"}>{board.hit}</td>
                         </tr>
                         <tr>
                             <td width={"20%"} className={"text-center"}>제목</td>
-                            <td colSpan={3}>{board.SUBJECT}</td>
+                            <td colSpan={3}>{board.subject}</td>
                         </tr>
                         <tr>
                             <td colSpan={4} className={"text-left"} valign={"top"}
@@ -66,13 +66,13 @@ function BoardDetail() {
                                     "whiteSpace": "pre-wrap",
                                     "backgroundColor": "white",
                                     "border": "none"
-                                }}>{board.CONTENT}</pre>
+                                }}>{board.content}</pre>
                             </td>
                         </tr>
                         <tr>
                             <td colSpan={4} className={"text-right"}>
-                                <Link to={"/board/update/" + board.NO} className={"btn btn-success"}>수정</Link>&nbsp;
-                                <Link to={"/board/delete/" + board.NO} className={"btn btn-warning"}>삭제</Link>&nbsp;
+                                <Link to={"/board/update/" + board.no} className={"btn btn-success"}>수정</Link>&nbsp;
+                                <Link to={"/board/delete/" + board.no} className={"btn btn-warning"}>삭제</Link>&nbsp;
                                 <Link to={"/board/list"} className={"btn btn-outline-primary"}>목록</Link>
                             </td>
                         </tr>

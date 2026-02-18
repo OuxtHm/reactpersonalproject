@@ -4,11 +4,11 @@ import {Link} from "react-router-dom";
 import boardClient from "../../board-commons";
 
 interface BoardItem {
-    NO: number;
-    SUBJECT: string;
-    NAME: string;
-    DBDAY: string;
-    HIT: string;
+    no: number;
+    subject: string;
+    name: string;
+    dbday: string;
+    hit: string;
 }
 
 interface BoardListResponse {
@@ -63,13 +63,13 @@ function BoardList() {
                         {
                             data?.data.list.map((board: BoardItem) =>
                                 <tr>
-                                    <td className="text-center" style={{ width: '10%' }}>{board.NO}</td>
+                                    <td className="text-center" style={{ width: '10%' }}>{board.no}</td>
                                     <td className="aln-left" style={{ width: '45%' }}>
-                                        <Link to={`/board/detail/${board.NO}`}>{board.SUBJECT}</Link>
+                                        <Link to={`/board/detail/${board.no}`}>{board.subject}</Link>
                                     </td>
-                                    <td className="text-center" style={{ width: '15%' }}>{board.NAME}</td>
-                                    <td className="text-center" style={{ width: '20%' }}>{board.DBDAY}</td>
-                                    <td className="text-center" style={{ width: '10%' }}>{board.HIT}</td>
+                                    <td className="text-center" style={{ width: '15%' }}>{board.name}</td>
+                                    <td className="text-center" style={{ width: '20%' }}>{board.dbday}</td>
+                                    <td className="text-center" style={{ width: '10%' }}>{board.hit}</td>
                                 </tr>
                             )
                         }
